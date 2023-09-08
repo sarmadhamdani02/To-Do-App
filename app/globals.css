@@ -67,3 +67,38 @@ button:hover{
 button:active{
   background-color: #4503b0;
 }
+
+.tasks-div{
+  margin: 20px 40px;
+  padding: 20px 40px;
+  border: 1px solid #4503b0;
+  border-radius: 15px;
+  transition: 200ms;
+  color: #111111;
+}
+
+.tasks-div:hover{
+  outline: 2px solid #4503b0;
+}
+
+.task{
+  display: flex;
+  justify-content: space-around;
+  color: #111111;
+  margin: 10px 0;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+
+.task h1{
+  font-weight: 600;
+  color: #222222;
+}
+
+.task h3{
+  color: #555555;
+}
+
+.task:nth-child(2n){
+  background-color: #4503b021;
+}

@@ -125,4 +125,29 @@ button:active{
   justify-content: center;
   align-items: center;
   gap: 40px;
+  /* display: none; */
+}
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4503b0;
+  border-left: .5px solid white;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6322cc;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #4503b0;
+
 }

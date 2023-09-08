@@ -44,6 +44,7 @@ const page = () => {
           To Do List
         </navbar>
 
+        <div className="main">
         <div className="main-content">
           <form >
             <input type="text" placeholder='Enter Task' value={taskName} onChange={(e) => {
@@ -63,7 +64,8 @@ const page = () => {
         </div>
 
         <div className="completed-tasks">
-          
+
+        </div>
         </div>
       </>
     )

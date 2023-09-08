@@ -73,12 +73,11 @@ button:active{
   padding: 20px 40px;
   border: 1px solid #4503b0;
   border-radius: 15px;
-  transition: 200ms;
   color: #111111;
 }
 
 .tasks-div:hover{
-  outline: 2px solid #4503b0;
+  outline: 1.5px solid #4503b0;
 }
 
 .task{
@@ -88,6 +87,7 @@ button:active{
   margin: 10px 0;
   padding: 10px 0;
   border-radius: 10px;
+  text-align: start;
 }
 
 .task h1{
@@ -101,4 +101,28 @@ button:active{
 
 .task:nth-child(2n){
   background-color: #4503b021;
+}
+
+.delete-btn{
+  background-color: transparent;
+  color: rgba(255, 0, 0, 0.800);
+  border: 1px solid rgba(255, 0, 0, 0.800);
+  border-radius: 10px;
+  padding: 5px 8px ;
+}
+
+.delete-btn:hover{
+  color: white;
+  background-color: rgba(255, 0, 0, 0.800);
+  border-color: red;
+  
+}
+
+.completed-tasks{
+  flex-direction: column;
+  height: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
 }

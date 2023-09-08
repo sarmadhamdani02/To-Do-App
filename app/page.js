@@ -1,6 +1,7 @@
 "use client"
 
 import { assetPrefix } from '@/next.config';
+import { Copse } from 'next/font/google';
 import React, { useState } from 'react';
 
 const page = () => {
@@ -9,15 +10,22 @@ const page = () => {
   const [taskDesc, settaskDesc] = useState("");
   let [taskPanel, settaskPanel] = useState([]);
   let renderTask = <h2 className=' text-red-600'>No Task has been added yet.</h2>
+  let [taskID, settaskID] = useState(-1);
+
+  const deleteTask = (i) => {
+    let copyTaskArray = [...taskPanel];
+    copyTaskArray.splice(i,1);
+    settaskPanel(copyTaskArray);
+  }
 
   if (taskPanel.length > 0) {
-    
   
   renderTask = taskPanel.map((t, i) => { // arguments: target and index repectively
     return (
-      <div className="task">
+      <div key={i} className="task">
         <h1>{t.taskName}</h1>
         <h3>{t.taskDesc}</h3>
+        <button className='delete-btn' onClick={() => {deleteTask(i)}}>Delete</button>
       </div>
     )
   });
@@ -35,6 +43,7 @@ const page = () => {
         <navbar className="nav-bar">
           To Do List
         </navbar>
+
         <div className="main-content">
           <form >
             <input type="text" placeholder='Enter Task' value={taskName} onChange={(e) => {
@@ -51,6 +60,10 @@ const page = () => {
             <li>{renderTask}</li>
 
           </ul>
+        </div>
+
+        <div className="completed-tasks">
+          
         </div>
       </>
     )

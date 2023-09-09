@@ -80,6 +80,18 @@ button:active{
   outline: 1.5px solid #4503b0;
 }
 
+.completed-tasks{
+  margin: 20px 40px;
+  padding: 20px 40px;
+  border: 1px solid #14b003;
+  border-radius: 15px;
+  color: #111111;
+}
+
+.completed-tasks:hover{
+  outline: 1.5px solid #14b003;
+}
+
 .task{
   display: flex;
   justify-content: space-around;
@@ -118,15 +130,6 @@ button:active{
   
 }
 
-.completed-tasks{
-  flex-direction: column;
-  height: 20vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  /* display: none; */
-}
 
 ::-webkit-scrollbar{
   width: 10px;

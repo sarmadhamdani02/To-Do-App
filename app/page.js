@@ -8,14 +8,25 @@ const page = () => {
 
   const [taskName, settaskName] = useState("");
   const [taskDesc, settaskDesc] = useState("");
+
+  let [completedTasks, setcompletedTasks] = useState("")
   let [taskPanel, settaskPanel] = useState([]);
+  let [compPanel, setcompPanel] = useState([]);
   let renderTask = <h2 className=' text-red-600'>No Task has been added yet.</h2>
+  let renderComptask = <h2 className=' text-red-600'>No Task has been completed yet.</h2>
   let [taskID, settaskID] = useState(-1);
 
   const deleteTask = (i) => {
     let copyTaskArray = [...taskPanel];
-    copyTaskArray.splice(i,1);
+    completedTasks = copyTaskArray.splice(i,1);
     settaskPanel(copyTaskArray);
+  }
+
+  const completeTask = (i) => {
+    let copyTaskArray = [...taskPanel];
+    completedTasks = copyTaskArray.splice(i,1);
+    let copyCompArray = [...completeTask, completeTask];
+    compPanel(copyCompArray);
   }
 
   if (taskPanel.length > 0) {
@@ -26,6 +37,19 @@ const page = () => {
         <h1>{t.taskName}</h1>
         <h3>{t.taskDesc}</h3>
         <button className='delete-btn' onClick={() => {deleteTask(i)}}>Delete</button>
+        <button className='comp-btn' onClick={() => {completeTask(i)}}>Done</button>
+      </div>
+    )
+  });
+}
+
+  if (compPanel.length > 0) {
+  
+  renderTask = compPanel.map((t, i) => { // arguments: target and index repectively
+    return (
+      <div key={i} className="task">
+        <h1>{t.taskName}</h1>
+        <h3>{t.taskDesc}</h3>
       </div>
     )
   });
@@ -64,7 +88,11 @@ const page = () => {
         </div>
 
         <div className="completed-tasks">
-
+            <ul>
+              <li>
+                {renderComptask}
+              </li>
+            </ul>
         </div>
         </div>
       </>
